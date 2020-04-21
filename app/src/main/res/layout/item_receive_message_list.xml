@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="12dp">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_message_item_time"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="2dp"
+        android:text="15:26"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/iv_header"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="8dp"
+        android:background="@color/maincolor" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_header"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="80dp"
+        android:layout_toEndOf="@+id/iv_header"
+        android:background="@drawable/bg_receive_msg_item"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="1.2"
+        android:minHeight="40dp"
+        android:padding="10dp"
+        android:text="这是发送的消息" />
+
+</RelativeLayout>

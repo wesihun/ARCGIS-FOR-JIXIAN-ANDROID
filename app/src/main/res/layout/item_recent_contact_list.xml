@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <ImageView
+        android:id="@+id/iv_header"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:background="@color/maincolor" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_header"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/iv_header"
+        android:text="好友昵称"
+        android:textSize="15sp"
+        android:textColor="@color/maintextcolor" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_header"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="3dp"
+        android:layout_toEndOf="@+id/iv_header"
+        android:text="聊天内容"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_user_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="3dp"
+        android:text="15:32"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_unread_count"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_alignTop="@id/iv_header"
+        android:layout_alignEnd="@id/iv_header"
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="-4dp"
+        android:background="@drawable/bg_message_count"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:visibility="gone"
+        tools:text="10" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line" />
+</RelativeLayout>
