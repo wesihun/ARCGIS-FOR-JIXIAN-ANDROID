@@ -5,6 +5,7 @@ import com.wise.develop.WiseChat.bean.ApplyCountBean;
 import com.wise.develop.WiseChat.bean.FriendApplyListBean;
 import com.wise.develop.WiseChat.bean.FriendListBean;
 import com.wise.develop.WiseChat.bean.MessageListBean;
+import com.wise.develop.WiseChat.bean.QiNiuTokenBean;
 import com.wise.develop.WiseChat.bean.RecentContactListBean;
 import com.wise.develop.WiseChat.bean.UserInfoBean;
 import com.wise.develop.WiseChat.bean.UserListBean;
@@ -82,4 +83,7 @@ public interface HttpService {
 
     @POST("message/clearUnReadMsgCount")
     Flowable<BaseResponse> clearUnReadMsgCount(@Body Map<String, Object> map);
+
+    @POST("upload/getUploadToken")
+    Flowable<QiNiuTokenBean> getUploadToken();
 }

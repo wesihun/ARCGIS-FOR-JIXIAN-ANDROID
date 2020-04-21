@@ -2,13 +2,7 @@ package com.wise.develop.WiseChat.listener;
 
 import java.io.File;
 
-/**
- * 创建时间：2018/3/7
- * 编写人：czw
- * 功能描述 ：
- */
-
-public interface DownloadCallBack {
+public interface UploadCallBack {
 
     void onProgress(int progress);
 

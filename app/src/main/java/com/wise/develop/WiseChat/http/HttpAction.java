@@ -6,6 +6,7 @@ import com.wise.develop.WiseChat.bean.ApplyCountBean;
 import com.wise.develop.WiseChat.bean.FriendApplyListBean;
 import com.wise.develop.WiseChat.bean.FriendListBean;
 import com.wise.develop.WiseChat.bean.MessageListBean;
+import com.wise.develop.WiseChat.bean.QiNiuTokenBean;
 import com.wise.develop.WiseChat.bean.RecentContactListBean;
 import com.wise.develop.WiseChat.bean.UserInfoBean;
 import com.wise.develop.WiseChat.bean.UserListBean;
@@ -84,5 +85,9 @@ public class HttpAction {
 
     public Flowable<BaseResponse> clearUnReadMsgCount(Map<String, Object> map) {
         return applySchedulers(HttpClient.getHttpService().clearUnReadMsgCount(map));
+    }
+
+    public Flowable<QiNiuTokenBean> getUploadToken() {
+        return applySchedulers(HttpClient.getHttpService().getUploadToken());
     }
 }
