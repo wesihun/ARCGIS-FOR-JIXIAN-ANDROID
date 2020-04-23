@@ -10,8 +10,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerVertical="true"
-        android:layout_marginStart="12dp"
-        android:background="@color/maincolor" />
+        android:layout_marginStart="12dp" />
 
     <TextView
         android:id="@+id/tv_user_name"
@@ -20,10 +19,12 @@
         android:layout_alignTop="@+id/iv_header"
         android:layout_marginStart="12dp"
         android:layout_marginTop="3dp"
+        android:layout_toStartOf="@+id/tv_time"
         android:layout_toEndOf="@+id/iv_header"
+        android:lines="1"
         android:text="好友昵称"
-        android:textSize="15sp"
-        android:textColor="@color/maintextcolor" />
+        android:textColor="@color/maintextcolor"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/tv_content"
@@ -31,8 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/iv_header"
         android:layout_marginStart="12dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="3dp"
+        android:layout_toStartOf="@+id/tv_time"
         android:layout_toEndOf="@+id/iv_header"
+        android:ellipsize="end"
+        android:lines="1"
         android:text="聊天内容"
         android:textColor="@color/secondtextcolor"
         android:textSize="12sp" />

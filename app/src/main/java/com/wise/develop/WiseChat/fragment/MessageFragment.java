@@ -91,8 +91,9 @@ public class MessageFragment extends BaseFragment {
         adapter.setOnItemClickListener((view, contact) -> {
             friendId = contact.getFriendId();
             Bundle bundle = new Bundle();
-            bundle.putString("userName", contact.getRemarkName());
-            bundle.putInt("userId", friendId);
+            bundle.putString("friendName", contact.getRemarkName());
+            bundle.putInt("friendId", friendId);
+            bundle.putString("friendHeader", contact.getUserHeader());
             toClass(context, ChatActivity.class, bundle);
         });
     }

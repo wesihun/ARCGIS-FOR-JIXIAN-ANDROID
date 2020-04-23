@@ -29,6 +29,7 @@ public class MessageListBean extends BaseResponse {
         private int sendOrReceive;
         private String time;
         private String userName;
+        private String userHeader;
         private String content;
 
         public int getMessageStatus() {
@@ -61,6 +62,14 @@ public class MessageListBean extends BaseResponse {
 
         public void setUserName(String userName) {
             this.userName = userName;
+        }
+
+        public String getUserHeader() {
+            return userHeader;
+        }
+
+        public void setUserHeader(String userHeader) {
+            this.userHeader = userHeader;
         }
 
         public String getContent() {

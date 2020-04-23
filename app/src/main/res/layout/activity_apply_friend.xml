@@ -45,7 +45,7 @@
         android:paddingBottom="10dp"
         android:text="请输入好友名称"
         android:textColor="@color/secondtextcolor"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_friend_list"

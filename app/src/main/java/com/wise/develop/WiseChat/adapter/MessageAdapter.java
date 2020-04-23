@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.wise.develop.WiseChat.R;
 import com.wise.develop.WiseChat.bean.MessageListBean;
 import com.wise.develop.WiseChat.bean.UserListBean;
+import com.wise.develop.WiseChat.util.DateUtil;
+import com.wise.develop.WiseChat.util.GlideUtil;
 
 import java.util.List;
 
@@ -41,11 +43,26 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         MessageListBean.DataBean message = getItem(position);
-        holder.tv_time.setText(message.getTime());
+        GlideUtil.displayRoundImage(context, message.getUserHeader(), holder.iv_header, 5);
+        if (isShowTimeLabel(position)){
+            holder.tv_time.setVisibility(View.VISIBLE);
+            holder.tv_time.setText(DateUtil.friendlyTime(message.getTime()));
+        } else {
+            holder.tv_time.setVisibility(View.GONE);
+        }
         holder.tv_content.setText(message.getContent());
     }
 
-    public MessageListBean.DataBean getItem(int position) {
+    private boolean isShowTimeLabel(int position) {
+        if (position == 0) {
+            return true;
+        }
+        String preTime = getItem(position - 1).getTime();
+        String currentTime = getItem(position).getTime();
+        return DateUtil.isShowTimeLabel(preTime, currentTime);
+    }
+
+    private MessageListBean.DataBean getItem(int position) {
         return messageList.get(position);
     }
 

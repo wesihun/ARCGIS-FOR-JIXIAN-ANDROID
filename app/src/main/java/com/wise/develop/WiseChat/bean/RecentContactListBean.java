@@ -6,6 +6,7 @@ import java.util.List;
 
 public class RecentContactListBean extends BaseResponse {
 
+
     private List<DataBean> data;
 
     public List<DataBean> getData() {
@@ -18,18 +19,21 @@ public class RecentContactListBean extends BaseResponse {
 
     public static class DataBean {
         /**
-         * friendId : 14
-         * remarkName : 郭芙蓉
-         * userName : 郭芙蓉
-         * nickname : 80638[75F9
-         * lastMessage : 1111
-         * sendTime : 2020-04-20 10:35:41
+         * friendId : 12
+         * remarkName : 景天
+         * userName : null
+         * nickname : 499[28Y12l
+         * userHeader : null
+         * lastMessage : 急急急
+         * sendTime : 2020-04-21 16:34:06
+         * unReadCount : 0
          */
 
         private int friendId;
         private String remarkName;
         private String userName;
         private String nickname;
+        private String userHeader;
         private String lastMessage;
         private String sendTime;
         private int unReadCount;
@@ -64,6 +68,14 @@ public class RecentContactListBean extends BaseResponse {
 
         public void setNickname(String nickname) {
             this.nickname = nickname;
+        }
+
+        public String getUserHeader() {
+            return userHeader;
+        }
+
+        public void setUserHeader(String userHeader) {
+            this.userHeader = userHeader;
         }
 
         public String getLastMessage() {

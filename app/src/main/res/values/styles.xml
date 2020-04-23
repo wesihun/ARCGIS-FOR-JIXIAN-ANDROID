@@ -35,4 +35,10 @@
         <item name="android:windowEnterAnimation">@anim/in_animation</item>
         <item name="android:windowExitAnimation">@anim/out_animation</item>
     </style>
+
+    <style name="BottomDialogTheme" parent="android:style/Theme.Dialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

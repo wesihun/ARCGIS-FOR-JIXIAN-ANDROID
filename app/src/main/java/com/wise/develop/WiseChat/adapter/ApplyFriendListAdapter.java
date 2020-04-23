@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.wise.develop.WiseChat.R;
 import com.wise.develop.WiseChat.bean.FriendApplyListBean;
+import com.wise.develop.WiseChat.util.GlideUtil;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class ApplyFriendListAdapter extends RecyclerView.Adapter<ApplyFriendList
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         FriendApplyListBean.DataBean applyFriend = getItem(position);
         holder.tv_user_name.setText(applyFriend.getUserName());
+        GlideUtil.displayRoundImage(context, applyFriend.getUserHeader(), holder.iv_header, 5);
         if ("0".equals(applyFriend.getAddStatus())) {
             holder.tv_add.setText("同意");
             holder.tv_add.setBackgroundResource(R.drawable.bg_btn_clickable_blue);

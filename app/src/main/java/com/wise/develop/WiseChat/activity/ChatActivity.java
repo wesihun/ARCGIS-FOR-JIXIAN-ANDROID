@@ -46,15 +46,17 @@ public class ChatActivity extends BaseActivity {
     private EditText et_content;
     private TextView tv_send;
 
-    private String userName;
-    private int userId;
+    private String friendName;
+    private String friendHeader;
+    private int friendId;
     private MessageAdapter adapter;
     private List<MessageListBean.DataBean> messageList;
 
     @Override
     protected void initIntentData() {
-        userName = getIntent().getStringExtra("userName");
-        userId = getIntent().getIntExtra("userId", 0);
+        friendName = getIntent().getStringExtra("friendName");
+        friendHeader = getIntent().getStringExtra("friendHeader");
+        friendId = getIntent().getIntExtra("friendId", 0);
     }
 
     @Override
@@ -65,7 +67,7 @@ public class ChatActivity extends BaseActivity {
         et_content = findViewById(R.id.et_content);
         tv_send = findViewById(R.id.tv_send);
 
-        tv_title.setText("与" + userName + "聊天中");
+        tv_title.setText("与" + friendName + "聊天中");
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_TAG);
@@ -103,8 +105,8 @@ public class ChatActivity extends BaseActivity {
             public void receive(Context context, Intent intent) {
                 String messageBody = intent.getStringExtra("messageBody");
                 MessageInfoBean message = new Gson().fromJson(messageBody, MessageInfoBean.class);
-                if (message.getFriendId() == userId) {
-                    refreshMessage(userName, message.getContent(), message.getSendTime(), 1);
+                if (message.getFriendId() == friendId) {
+                    refreshMessage(friendName, message.getContent(), message.getSendTime(), friendHeader, 1);
                 }
             }
         });
@@ -112,7 +114,7 @@ public class ChatActivity extends BaseActivity {
 
     private void getMessageHistory() {
         Map<String, Object> params = new HashMap<>();
-        params.put("userId", userId);
+        params.put("userId", friendId);
         HttpAction.getInstance().getMessageHistory(params).subscribe(new BaseObserver<MessageListBean>() {
             @Override
             public void onSuccess(MessageListBean bean) {
@@ -137,11 +139,15 @@ public class ChatActivity extends BaseActivity {
         }
 
         et_content.setText("");
-        refreshMessage(MainApplication.getContext().getUserInfo().getUserName(), content, DateUtil.getCurrentTimeStr(DateUtil.YYYY_MM_DD_HH_MM_SS), 0);
+        refreshMessage(MainApplication.getContext().getUserInfo().getUserName(),
+                content,
+                DateUtil.getCurrentTimeStr(DateUtil.YYYY_MM_DD_HH_MM_SS),
+                MainApplication.getContext().getUserInfo().getUserHeader(),
+                0);
 
         Map<String, Object> params = new HashMap<>();
         params.put("content", content);
-        params.put("toUserId", userId);
+        params.put("toUserId", friendId);
         HttpAction.getInstance().sendMessage(params).subscribe(new BaseObserver<BaseResponse>() {
             @Override
             public void onSuccess(BaseResponse bean) {
@@ -155,11 +161,12 @@ public class ChatActivity extends BaseActivity {
         });
     }
 
-    private void refreshMessage(String userName, String content, String sendTime, int sendOrReceive) {
+    private void refreshMessage(String userName, String content, String sendTime, String userHeader, int sendOrReceive) {
         MessageListBean.DataBean message = new MessageListBean.DataBean();
         message.setContent(content);
         message.setTime(sendTime);
         message.setSendOrReceive(sendOrReceive);
+        message.setUserHeader(userHeader);
         message.setUserName(userName);
         messageList.add(message);
         adapter.notifyItemInserted(adapter.getItemCount());

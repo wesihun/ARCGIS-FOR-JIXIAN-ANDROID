@@ -1,10 +1,16 @@
 package com.wise.develop.WiseChat.activity;
 
 import android.Manifest;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
+import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.wise.develop.WiseChat.MainApplication;
 import com.wise.develop.WiseChat.R;
@@ -12,7 +18,9 @@ import com.wise.develop.WiseChat.base.BaseActivity;
 import com.wise.develop.WiseChat.util.ToastUtil;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 /**
  * Created by zyp on 2019/8/20 0020.
@@ -26,17 +34,20 @@ public class WelcomeActivity extends BaseActivity {
             Manifest.permission.RECORD_AUDIO,
             Manifest.permission.CAMERA,
             Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+
             Manifest.permission.READ_PHONE_STATE};
 
     @Override
     protected void onStart() {
         super.onStart();
         initPermission();
+
     }
 
     @Override
     protected void initView() {
-        new Handler().postDelayed(this::gotoActivity, 2000);
+
     }
 
     @Override

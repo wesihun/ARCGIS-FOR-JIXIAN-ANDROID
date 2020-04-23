@@ -26,20 +26,21 @@
         android:layout_height="40dp"
         android:layout_below="@+id/tv_time"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:background="@color/secondcolor" />
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/iv_header"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="50dp"
         android:layout_marginEnd="10dp"
         android:layout_toStartOf="@+id/iv_header"
         android:background="@drawable/bg_send_msg_item"
         android:gravity="center_vertical"
         android:lineSpacingMultiplier="1.2"
+        android:textSize="14sp"
+        android:textColor="@color/maintextcolor"
         android:minHeight="40dp"
         android:padding="10dp"
         android:text="这是发送的消息" />

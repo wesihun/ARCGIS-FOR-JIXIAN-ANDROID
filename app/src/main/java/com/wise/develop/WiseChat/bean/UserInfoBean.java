@@ -2,11 +2,11 @@ package com.wise.develop.WiseChat.bean;
 
 import com.wise.develop.WiseChat.base.BaseResponse;
 
-public class UserInfoBean extends BaseResponse {
+import java.io.Serializable;
 
-    private static final long serialVersionUID = 2215720662752575817L;
+public class UserInfoBean extends BaseResponse {
     /**
-     * data : {"userId":0,"userName":"zyp","nickname":"zyp","userToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjYyOTczMyIsImV4cCI6MTU3ODczODc1OSwidXNlcm5hbWUiOiJ6eXAifQ.KDWtOE9lKrEJ0dxuNbAZbnoNNx0ud2ArUxpboZyqUlk","password":"629733","age":0,"sex":null,"desc":null}
+     * data : {"id":11,"userName":"李逍遥","nickname":"54Be62g2e3","userToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODc3MDU4MTAsInVzZXJJZCI6MTF9.4Ue5l3VFirATDSdxgVW1EjNcjTUBryDZiZUncAW0dHU","password":"1234","age":0,"sex":0,"desc":null,"userHeader":null,"userLocation":null}
      */
 
     private DataBean data;
@@ -19,26 +19,31 @@ public class UserInfoBean extends BaseResponse {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
-         * userId : 0
-         * userName : zyp
-         * nickname : zyp
-         * userToken : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjYyOTczMyIsImV4cCI6MTU3ODczODc1OSwidXNlcm5hbWUiOiJ6eXAifQ.KDWtOE9lKrEJ0dxuNbAZbnoNNx0ud2ArUxpboZyqUlk
-         * password : 629733
+         * id : 11
+         * userName : 李逍遥
+         * nickname : 54Be62g2e3
+         * userToken : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODc3MDU4MTAsInVzZXJJZCI6MTF9.4Ue5l3VFirATDSdxgVW1EjNcjTUBryDZiZUncAW0dHU
+         * password : 1234
          * age : 0
-         * sex : null
+         * sex : 0
          * desc : null
+         * userHeader : null
+         * userLocation : null
          */
 
         private int id;
         private String userName;
-        private String nickname;
+        private String nickName;
         private String userToken;
         private String password;
         private int age;
         private int sex;
-        private Object desc;
+        private String desc;
+        private String userHeader;
+        private String userLocation;
+        private String birth;
 
         public int getId() {
             return id;
@@ -56,12 +61,12 @@ public class UserInfoBean extends BaseResponse {
             this.userName = userName;
         }
 
-        public String getNickname() {
-            return nickname;
+        public String getNickName() {
+            return nickName;
         }
 
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
+        public void setNickName(String nickName) {
+            this.nickName = nickName;
         }
 
         public String getUserToken() {
@@ -96,12 +101,36 @@ public class UserInfoBean extends BaseResponse {
             this.sex = sex;
         }
 
-        public Object getDesc() {
+        public String getDesc() {
             return desc;
         }
 
-        public void setDesc(Object desc) {
+        public void setDesc(String desc) {
             this.desc = desc;
+        }
+
+        public String getUserHeader() {
+            return userHeader;
+        }
+
+        public void setUserHeader(String userHeader) {
+            this.userHeader = userHeader;
+        }
+
+        public String getUserLocation() {
+            return userLocation;
+        }
+
+        public void setUserLocation(String userLocation) {
+            this.userLocation = userLocation;
+        }
+
+        public String getBirth() {
+            return birth;
+        }
+
+        public void setBirth(String birth) {
+            this.birth = birth;
         }
     }
 }

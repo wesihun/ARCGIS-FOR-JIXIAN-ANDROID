@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.wise.develop.WiseChat.R;
 import com.wise.develop.WiseChat.bean.FriendListBean;
+import com.wise.develop.WiseChat.util.GlideUtil;
 
 import java.util.List;
 
@@ -35,11 +36,12 @@ public class FriendListAdapter extends RecyclerView.Adapter<FriendListAdapter.Us
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         FriendListBean.DataBean friend = getItem(position);
         holder.tv_user_name.setText(friend.getUserName());
+        GlideUtil.displayRoundImage(context, friend.getUserHeader(), holder.iv_header, 5);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (listener!=null){
+                if (listener != null) {
                     listener.onItemClick(friend);
                 }
             }

@@ -90,4 +90,8 @@ public class HttpAction {
     public Flowable<QiNiuTokenBean> getUploadToken() {
         return applySchedulers(HttpClient.getHttpService().getUploadToken());
     }
+
+    public Flowable<BaseResponse> updateUser(Map<String, Object> map) {
+        return applySchedulers(HttpClient.getHttpService().updateUser(map));
+    }
 }

@@ -13,6 +13,8 @@ public class MessageInfoBean extends BaseResponse {
     private int friendId;
     private String content;
     private String sendTime;
+    private String friendName;
+    private String friendHeader;
 
     public int getFriendId() {
         return friendId;
@@ -36,5 +38,21 @@ public class MessageInfoBean extends BaseResponse {
 
     public void setSendTime(String sendTime) {
         this.sendTime = sendTime;
+    }
+
+    public String getFriendName() {
+        return friendName;
+    }
+
+    public void setFriendName(String friendName) {
+        this.friendName = friendName;
+    }
+
+    public String getFriendHeader() {
+        return friendHeader;
+    }
+
+    public void setFriendHeader(String friendHeader) {
+        this.friendHeader = friendHeader;
     }
 }

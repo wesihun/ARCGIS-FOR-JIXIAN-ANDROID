@@ -1,33 +1,37 @@
 package com.wise.develop.WiseChat.util;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-
-import jp.wasabeef.glide.transformations.BlurTransformation;
+import com.wise.develop.WiseChat.R;
 
 public class GlideUtil {
 
-    public static void displayImage(Context activity, String url, ImageView imageView) {
-        Glide.with(activity).load(url).into(imageView);
+    public static void displayImage(Context activity, int url, ImageView imageView) {
+        Glide.with(activity)
+                .load(url)
+                .into(imageView);
     }
 
-    /**
-     * 毛玻璃效果
-     */
-    public static void displayImageTransform(Context activity, String url, ImageView imageView) {
-        Glide.with(activity).load(url)
-                .bitmapTransform(new BlurTransformation(activity, 50), new CenterCrop(activity))
+    public static void displayImage(Context activity, String url, ImageView imageView) {
+        if (TextUtils.isEmpty(url)) {
+            displayImage(activity, R.drawable.ic_default, imageView);
+            return;
+        }
+        Glide.with(activity)
+                .load(url)
                 .into(imageView);
     }
 
     /**
      * 圆角效果
      */
-    public static void displayRoundImage(Context activity, String url, ImageView imageView, int corner) {
+    public static void displayRoundImage(Context activity, int url, ImageView imageView, int corner) {
         Glide.with(activity).load(url)
                 .transform(new CenterCrop(activity), new CornersTransform(activity, corner))
                 .into(imageView);
@@ -36,9 +40,69 @@ public class GlideUtil {
     /**
      * 圆角效果
      */
-    public static void displayRoundImageLocal(Context activity, int path, ImageView imageView) {
+    public static void displayRoundImage(Context activity, String url, ImageView imageView, int corner) {
+        if (TextUtils.isEmpty(url)) {
+            displayRoundImage(activity, R.drawable.ic_default, imageView, corner);
+            return;
+        }
+        Glide.with(activity).load(url)
+                .transform(new CenterCrop(activity), new CornersTransform(activity, corner))
+                .into(imageView);
+    }
+
+    /**
+     * 部分圆角效果
+     */
+    public static void displayPartRoundImage(Context activity,
+                                             int url,
+                                             ImageView imageView,
+                                             boolean leftTop,
+                                             boolean rightTop,
+                                             boolean leftBottom,
+                                             boolean rightBottom,
+                                             int corner) {
+        RoundedCornersTransform transform = new RoundedCornersTransform(activity, corner);
+        transform.setNeedCorner(leftTop, rightTop, leftBottom, rightBottom);
+        Glide.with(activity)
+                .load(url)
+                .asBitmap()
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .transform(new CenterCrop(activity), transform)
+                .into(imageView);
+    }
+
+    /**
+     * 部分圆角效果
+     */
+    public static void displayPartRoundImage(Context activity,
+                                             String url,
+                                             ImageView imageView,
+                                             boolean leftTop,
+                                             boolean rightTop,
+                                             boolean leftBottom,
+                                             boolean rightBottom,
+                                             int corner) {
+        if (TextUtils.isEmpty(url)) {
+            displayPartRoundImage(activity, R.drawable.ic_default, imageView, leftTop, rightTop, leftBottom, rightBottom, corner);
+            return;
+        }
+        RoundedCornersTransform transform = new RoundedCornersTransform(activity, corner);
+        transform.setNeedCorner(leftTop, rightTop, leftBottom, rightBottom);
+        Glide.with(activity)
+                .load(url)
+                .asBitmap()
+                .transform(new CenterCrop(activity), transform)
+                .into(imageView);
+    }
+
+    /**
+     * 圆形图片
+     */
+    public static void displayCircleImage(Context activity, int path, ImageView imageView) {
         Glide.with(activity).load(path).diskCacheStrategy(DiskCacheStrategy.ALL)
-                .transform(new CornersTransform(activity, 30))
+                .transform(new GlideCircleTransform(activity))
+                .crossFade()
                 .into(imageView);
     }
 
@@ -46,16 +110,17 @@ public class GlideUtil {
      * 圆形图片
      */
     public static void displayCircleImage(Context activity, String url, ImageView imageView) {
-        Glide.with(activity).load(url).transform(new GlideCircleTransform(activity)).into(imageView);
+        if (TextUtils.isEmpty(url)) {
+            displayCircleImage(activity, R.drawable.ic_default, imageView);
+            return;
+        }
+        Glide.with(activity)
+                .load(url)
+                .transform(new GlideCircleTransform(activity))
+                .into(imageView);
     }
 
-    /**
-     * 圆形图片
-     */
-    public static void displayCircleImageLocal(Context activity, int path, ImageView imageView) {
-        Glide.with(activity).load(path).diskCacheStrategy(DiskCacheStrategy.ALL)
-                .transform(new GlideCircleTransform(activity))
-                .crossFade()
-                .into(imageView);
+    public static void loadImage(RequestManager glide, String url, ImageView view) {
+        glide.load(url).into(view);
     }
 }

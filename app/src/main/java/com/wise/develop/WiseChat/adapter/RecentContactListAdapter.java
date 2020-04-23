@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.wise.develop.WiseChat.R;
 import com.wise.develop.WiseChat.bean.RecentContactListBean;
+import com.wise.develop.WiseChat.util.DateUtil;
+import com.wise.develop.WiseChat.util.GlideUtil;
 
 import java.util.List;
 
@@ -35,9 +37,10 @@ public class RecentContactListAdapter extends RecyclerView.Adapter<RecentContact
     @Override
     public void onBindViewHolder(@NonNull RecentContactViewHolder holder, int position) {
         RecentContactListBean.DataBean contact = getItem(position);
+        GlideUtil.displayRoundImage(context, contact.getUserHeader(), holder.iv_header, 5);
         holder.tv_user_name.setText(contact.getRemarkName());
         holder.tv_content.setText(contact.getLastMessage());
-        holder.tv_time.setText(contact.getSendTime());
+        holder.tv_time.setText(DateUtil.friendlyTime(contact.getSendTime()));
         int count = contact.getUnReadCount();
         if (count == 0) {
             holder.tv_unread_count.setVisibility(View.GONE);

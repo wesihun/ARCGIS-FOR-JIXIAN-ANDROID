@@ -86,4 +86,7 @@ public interface HttpService {
 
     @POST("upload/getUploadToken")
     Flowable<QiNiuTokenBean> getUploadToken();
+
+    @POST("user/updateUser")
+    Flowable<BaseResponse> updateUser(@Body Map<String, Object> map);
 }
