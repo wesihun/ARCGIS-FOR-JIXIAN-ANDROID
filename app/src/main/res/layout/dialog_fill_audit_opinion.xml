@@ -1,0 +1,76 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp30"
+    android:layout_marginEnd="@dimen/dp30"
+    android:background="@drawable/bg_white_corner_3dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp20"
+        android:text="填写审核意见"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_opinion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp100"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp20"
+        android:inputType="text"
+        android:background="@drawable/bg_btn_solid_gray"
+        android:hint="请填写审核意见"
+        android:gravity="start"
+        android:padding="@dimen/dp10"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp10"
+        android:paddingStart="@dimen/dp10"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp10"
+        android:paddingBottom="@dimen/dp5"
+        android:text="退回"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp20"
+        android:paddingStart="@dimen/dp10"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp5"
+        android:text="通过"
+        android:textColor="@color/maincolor"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_opinion" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

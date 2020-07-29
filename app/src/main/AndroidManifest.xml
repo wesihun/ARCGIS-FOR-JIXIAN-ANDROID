@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wise.develop.WiseChat">
+    package="com.winto.develop.ThreeTones">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,66 +15,87 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".activity.WelcomeActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".activity.LoginActivity"
+            android:name="com.winto.develop.ThreeTones.activity.LoginActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="fullSensor" />
-
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.winto.develop.ThreeTones.activity.MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="fullSensor" />
-
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LandInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SpecialInvestigationActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.StatisticalAnalysisActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WordShareActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FilePreviewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AuditManageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ModifyInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BrowseCensusActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DownloadManageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NoticeDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StatisticalReportActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.RegisterActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".activity.ApplyFriendActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".activity.SearchUserActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="fullSensor"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name=".activity.ChatActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="fullSensor"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name=".activity.UserEditActivity"
-            android:theme="@style/DefaultCityPickerTheme" />
-
-        <!--<provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.wise.develop.WiseChat.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>-->
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

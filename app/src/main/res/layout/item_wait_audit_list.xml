@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp10"
+    android:layout_marginTop="@dimen/dp10"
+    android:layout_marginEnd="@dimen/dp10"
+    android:background="@drawable/bg_white_corner_10dp"
+    android:orientation="vertical"
+    android:padding="@dimen/dp10">
+
+    <TextView
+        android:id="@+id/tv_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/maintextcolor"
+        android:textSize="@dimen/sp14"
+        tools:text="申请人：邬倩倩" />
+
+    <TextView
+        android:id="@+id/tv_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_person"
+        android:layout_marginTop="@dimen/dp10"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="@color/maintextcolor"
+        android:textSize="@dimen/sp14"
+        tools:text="申请部门：环境资源局环境资源局环境资源局环境资源局环境资源局环境资源局" />
+
+    <TextView
+        android:id="@+id/tv_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_department"
+        android:layout_marginTop="@dimen/dp10"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12"
+        tools:text="职位：科员" />
+
+    <TextView
+        android:id="@+id/tv_purpose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_department"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_toEndOf="@+id/tv_job"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12"
+        tools:text="申请用途：地理环境监测分析地理环境监测分析地理环境监测分析地理环境监测分析地理环境监测分析" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_purpose"
+        android:layout_marginTop="@dimen/dp10"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12"
+        tools:text="电话：0451-89214020" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_phone"
+        android:layout_marginTop="@dimen/dp10"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12"
+        tools:text="申请时间：2020年3月8日" />
+
+    <TextView
+        android:id="@+id/tv_apply_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="状态：已申请"
+        android:textColor="#ff06b43b"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_examine_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_apply_state"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_btn_blue_corner"
+        android:paddingStart="@dimen/dp15"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp15"
+        android:paddingBottom="@dimen/dp5"
+        android:text="审核"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12" />
+</RelativeLayout>

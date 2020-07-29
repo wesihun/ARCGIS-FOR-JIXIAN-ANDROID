@@ -36,9 +36,49 @@
         <item name="android:windowExitAnimation">@anim/out_animation</item>
     </style>
 
+    <style name="popwin_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+    </style>
+
     <style name="BottomDialogTheme" parent="android:style/Theme.Dialog">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:windowAnimationStyle">@style/pop_win_anim_style</item>
         <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="CustomDialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- 对话框 -->
+    <style name="transparentWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!-- 对话框动画 -->
+    <style name="windowAnimationStyle" parent="android:Animation">
+        <!-- 进入时的动画 -->
+        <item name="android:windowEnterAnimation">@anim/in_animation</item>
+        <!-- 退出时的动画 -->
+        <item name="android:windowExitAnimation">@anim/out_animation</item>
+    </style>
+
+    <style name="WarpLinearLayoutDefault">
+        <item name="grivate">left</item>
+        <item name="horizontal_Space">20dp</item>
+        <item name="vertical_Space">20dp</item>
+        <item name="isFull">false</item>
     </style>
 </resources>

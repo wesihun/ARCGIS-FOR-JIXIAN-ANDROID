@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_bottomsheet_top" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_top"
+            android:background="@color/white" />
+
+        <com.winto.develop.ThreeTones.wight.HorizontalLineView
+            android:id="@+id/hlv_bar"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp10" />
+
+        <RelativeLayout
+            android:id="@+id/rl_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp35"
+            android:layout_below="@+id/hlv_bar"
+            android:layout_marginStart="@dimen/dp13"
+            android:layout_marginEnd="@dimen/dp13"
+            android:background="@drawable/bg_btn_clickable_solid_blue_corner5">
+
+            <EditText
+                android:id="@+id/et_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_toStartOf="@+id/tv_search"
+                android:background="@null"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/dp10"
+                android:hint="请输入搜索内容"
+                android:inputType="text"
+                android:lines="1"
+                android:paddingStart="@dimen/dp10"
+                android:paddingEnd="@dimen/dp10"
+                android:textSize="@dimen/sp12" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp3"
+                android:layout_marginBottom="@dimen/dp3"
+                android:layout_toStartOf="@+id/et_input"
+                android:background="@color/line" />
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:paddingStart="@dimen/dp15"
+                android:paddingEnd="@dimen/dp15"
+                android:text="搜索"
+                android:textColor="@color/maintextcolor"
+                android:textSize="@dimen/sp12" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_land_info_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_search"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp15"
+            android:drawablePadding="@dimen/dp3"
+            android:gravity="center"
+            android:text="土地信息"
+            android:textColor="@color/maintextcolor"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp3"
+            android:layout_below="@+id/tv_land_info_label"
+            android:layout_alignStart="@+id/tv_land_info_label"
+            android:layout_alignEnd="@+id/tv_land_info_label"
+            android:layout_marginTop="@dimen/dp4"
+            android:background="@color/maincolor" />
+
+
+        <TextView
+            android:id="@+id/tv_land_now_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_divider"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableStart="@drawable/ic_land_now_state"
+            android:drawablePadding="@dimen/dp5"
+            android:text="土地利用调查现状"
+            android:textColor="@color/maincolor"
+            android:textSize="@dimen/sp14"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/tv_land_now_label"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp20"
+            android:background="@color/line" />
+
+        <ListView
+            android:id="@+id/lv_land_cate_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_line"
+            android:divider="@color/line"
+            android:dividerHeight="1px"
+            android:nestedScrollingEnabled="true"
+            android:paddingStart="@dimen/dp20"
+            android:paddingEnd="@dimen/dp20"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_land_cate_list" />
+    </RelativeLayout>
+</RelativeLayout>

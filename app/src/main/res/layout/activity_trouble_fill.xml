@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/maincolor">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="隐患填报"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/mainbg"
+                android:padding="5dp"
+                android:text="隐患详情"
+                android:textColor="@color/maintextcolor"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_process_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="选择流程"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_process"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_process_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_process_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_process_label" />
+
+            <TextView
+                android:id="@+id/tv_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="风险点名称"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_process_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_name_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_name_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_label" />
+
+
+            <TextView
+                android:id="@+id/tv_id_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="风险点编号"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_label" />
+
+            <EditText
+                android:id="@+id/et_id"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:drawablePadding="5dp"
+                android:hint="请输入风险点编号"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_id_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/et_base_info"
+                app:layout_constraintTop_toTopOf="@+id/tv_id_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_id_label" />
+
+            <TextView
+                android:id="@+id/tv_base_info_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="隐患基本情况"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_id_label" />
+
+            <EditText
+                android:id="@+id/et_base_info"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@null"
+                android:drawablePadding="5dp"
+                android:hint="请输入隐患基本情况"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_base_info_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_base_info_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_base_info_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_base_info_label" />
+
+            <TextView
+                android:id="@+id/tv_type_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_empty"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="事故类型"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_base_info_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_type_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_type_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_type_label" />
+
+            <TextView
+                android:id="@+id/tv_head_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="整改负责人"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_type_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_head_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_head_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_head_label" />
+
+            <TextView
+                android:id="@+id/tv_department_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="整改负责部门"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_head_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_department_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_department_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_department_label" />
+
+            <TextView
+                android:id="@+id/tv_demand_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="整改要求"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_department_label" />
+
+            <EditText
+                android:id="@+id/et_demand"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:drawablePadding="5dp"
+                android:hint="请输入整改要求"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_demand_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/et_base_info"
+                app:layout_constraintTop_toTopOf="@+id/tv_demand_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_demand_label" />
+
+            <TextView
+                android:id="@+id/tv_level_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="隐患级别"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_demand_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_level_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_level_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_level_label" />
+
+
+            <TextView
+                android:id="@+id/tv_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="排查日期"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_level_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_date_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_date_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_label" />
+
+
+            <TextView
+                android:id="@+id/tv_time_limit_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_xing"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="整改期限"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_time_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawableEnd="@drawable/ic_more"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="请选择"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_time_limit_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_time_limit_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time_limit_label" />
+
+
+            <TextView
+                android:id="@+id/tv_attachment_label"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/ic_empty"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="隐患附件"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time_limit_label" />
+
+            <TextView
+                android:id="@+id/tv_choose_attachment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="点击可预览附件"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_attachment_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_attachment_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line"
+                app:layout_constraintTop_toBottomOf="@+id/tv_attachment_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_btn_clickable_blue"
+        android:text="提交"
+        android:textColor="@color/white" />
+</LinearLayout>

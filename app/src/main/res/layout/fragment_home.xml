@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.esri.arcgisruntime.mapping.view.MapView
+        android:id="@+id/mv_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DBE5F0" />
+
+    <include
+        android:id="@+id/include_fun"
+        layout="@layout/include_function_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dp50"
+        android:layout_marginEnd="@dimen/dp5"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/iv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iv_compass"
+        android:layout_alignStart="@+id/include_fun"
+        android:layout_alignEnd="@+id/include_fun"
+        android:layout_marginBottom="@dimen/dp10"
+        android:src="@drawable/ic_position_bgwhite" />
+
+    <ImageView
+        android:id="@+id/iv_compass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iv_bottom_header"
+        android:layout_alignStart="@+id/include_fun"
+        android:layout_alignEnd="@+id/include_fun"
+        android:layout_marginBottom="@dimen/dp10"
+        android:src="@drawable/ic_compass" />
+
+    <ImageView
+        android:id="@+id/iv_bottom_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_bottom"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_bottomsheet_top" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp90"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp10"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp10">
+
+        <TextView
+            android:id="@+id/tv_zygx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_zygx"
+            android:drawablePadding="@dimen/dp5"
+            android:gravity="center_horizontal"
+            android:text="资源共享" />
+
+        <TextView
+            android:id="@+id/tv_zxdc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_zxdc"
+            android:drawablePadding="@dimen/dp5"
+            android:gravity="center_horizontal"
+            android:text="专项调查" />
+
+        <TextView
+            android:id="@+id/tv_tjfx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_tjfx"
+            android:drawablePadding="@dimen/dp5"
+            android:gravity="center_horizontal"
+            android:text="统计分析" />
+
+        <TextView
+            android:id="@+id/tv_wdgx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_wdgx"
+            android:drawablePadding="@dimen/dp5"
+            android:gravity="center_horizontal"
+            android:text="文档共享" />
+
+    </LinearLayout>
+</RelativeLayout>

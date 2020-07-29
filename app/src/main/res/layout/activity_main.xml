@@ -19,36 +19,22 @@
     <RadioGroup
         android:id="@+id/rg_main"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="@dimen/dp55"
         android:background="@color/white"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/rb_msg"
+            android:id="@+id/rb_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:button="@null"
             android:checked="true"
-            android:drawableTop="@drawable/tab_msg_selector"
-            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/tab_home_selector"
+            android:drawablePadding="@dimen/dp5"
             android:gravity="center"
-            android:text="消息"
-            android:textColor="@drawable/tab_text_selector"
-            android:textSize="12sp" />
-
-        <RadioButton
-            android:id="@+id/rb_friend"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/tab_friend_selector"
-            android:drawablePadding="5dp"
-            android:gravity="center"
-            android:text="好友"
+            android:text="首页"
             android:textColor="@drawable/tab_text_selector"
             android:textSize="12sp" />
 
@@ -59,22 +45,22 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/tab_find_selector"
-            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/tab_search_selector"
+            android:drawablePadding="@dimen/dp5"
             android:gravity="center"
-            android:text="发现"
+            android:text="通知"
             android:textColor="@drawable/tab_text_selector"
             android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/rb_my"
+            android:id="@+id/rb_statistics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/tab_my_selector"
-            android:drawablePadding="5dp"
+            android:drawablePadding="@dimen/dp5"
             android:gravity="center"
             android:text="我的"
             android:textColor="@drawable/tab_text_selector"

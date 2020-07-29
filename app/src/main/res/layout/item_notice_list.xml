@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_notice_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp20"
+        android:text="战明秀主持召开县委书记专题办公会议"
+        android:textColor="@color/maintextcolor"
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_notice_name"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp20"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="战明秀主持召开县委书记专题办公会议,战明秀主持召开县委书 记专题办公会议,战明秀主持召开县委书记专题办公会议,战明秀 主持召开县委书记专题办公会议."
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_info"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp15"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/dp20"
+        android:text="微信公众号"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_info"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp20"
+        android:text="2020年3月25日"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@color/line" />
+</RelativeLayout>

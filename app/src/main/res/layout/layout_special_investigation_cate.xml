@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_bottomsheet_top" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_top"
+            android:background="@color/white" />
+
+        <com.winto.develop.ThreeTones.wight.HorizontalLineView
+            android:id="@+id/hlv_bar"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp10" />
+
+        <RelativeLayout
+            android:id="@+id/rl_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp35"
+            android:layout_below="@+id/hlv_bar"
+            android:layout_marginStart="@dimen/dp13"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/dp13"
+            android:background="@drawable/bg_btn_clickable_solid_blue_corner5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:text="搜索地类信息" />
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_search"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp40"
+            android:indeterminateTint="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_search"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_special_cate1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                tools:listitem="@layout/item_special_cate_list" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_special_cate2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                tools:listitem="@layout/item_special_cate_list" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_special_cate3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_weight="1"
+                android:visibility="gone"
+                tools:listitem="@layout/item_special_cate_list" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

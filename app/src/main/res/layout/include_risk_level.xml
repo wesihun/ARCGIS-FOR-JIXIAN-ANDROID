@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_major_risk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_diamond1"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_large_risk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_major_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="6"
+        android:textColor="@color/maincolor"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_major_risk"
+        app:layout_constraintEnd_toEndOf="@+id/iv_major_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_major_risk"
+        app:layout_constraintTop_toTopOf="@+id/iv_major_risk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="重大风险"
+        android:textColor="@color/maincolor"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_major_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_major_risk"
+        app:layout_constraintTop_toBottomOf="@+id/iv_major_risk" />
+
+
+    <ImageView
+        android:id="@+id/iv_large_risk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/ic_diamond2"
+        app:layout_constraintEnd_toStartOf="@+id/iv_general_risk"
+        app:layout_constraintStart_toEndOf="@+id/iv_major_risk"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_large_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="6"
+        android:textColor="@color/maincolor"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_large_risk"
+        app:layout_constraintEnd_toEndOf="@+id/iv_large_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_large_risk"
+        app:layout_constraintTop_toTopOf="@+id/iv_large_risk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="较大风险"
+        android:textColor="@color/maincolor"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_large_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_large_risk"
+        app:layout_constraintTop_toBottomOf="@+id/iv_large_risk" />
+
+
+    <ImageView
+        android:id="@+id/iv_general_risk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/ic_diamond3"
+        app:layout_constraintEnd_toStartOf="@+id/iv_low_risk"
+        app:layout_constraintStart_toEndOf="@+id/iv_large_risk"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_general_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="6"
+        android:textColor="@color/maincolor"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_general_risk"
+        app:layout_constraintEnd_toEndOf="@+id/iv_general_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_general_risk"
+        app:layout_constraintTop_toTopOf="@+id/iv_general_risk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="一般风险"
+        android:textColor="@color/maincolor"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_general_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_general_risk"
+        app:layout_constraintTop_toBottomOf="@+id/iv_general_risk" />
+
+
+    <ImageView
+        android:id="@+id/iv_low_risk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_diamond4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_general_risk"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/iv_low_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="6"
+        android:textColor="@color/maincolor"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_low_risk"
+        app:layout_constraintEnd_toEndOf="@+id/iv_low_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_low_risk"
+        app:layout_constraintTop_toTopOf="@+id/iv_low_risk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="低风险"
+        android:textColor="@color/maincolor"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_low_risk"
+        app:layout_constraintStart_toStartOf="@+id/iv_low_risk"
+        app:layout_constraintTop_toBottomOf="@+id/iv_low_risk" />
+</androidx.constraintlayout.widget.ConstraintLayout>

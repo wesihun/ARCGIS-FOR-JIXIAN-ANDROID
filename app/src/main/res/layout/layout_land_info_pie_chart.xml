@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_corner_3dp">
+
+    <TextView
+        android:id="@+id/tv_pie_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp30"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:lines="1"
+        android:text="农用地各地类比例图"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_cancel_pie" />
+
+    <ImageView
+        android:id="@+id/iv_cancel_pie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/dp5"
+        android:src="@drawable/ic_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pc_chart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:layout_below="@+id/tv_pie_title"
+        android:layout_margin="@dimen/dp5"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pie_title" />
+
+    <com.teaanddogdog.mpandroidchartutil.PieChartFixCover
+        android:id="@+id/pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pie_title"
+        app:mp_chart_auto_adapt_text_size="true"
+        app:mp_chart_out_value_place_mode="AVG" />
+
+    <com.winto.develop.ThreeTones.wight.AutoNextLineLinearlayout
+        android:id="@+id/anl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5"
+        app:grivate="left"
+        app:horizontal_Space="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pie_chart"
+        app:vertical_Space="3px" />
+</androidx.constraintlayout.widget.ConstraintLayout>

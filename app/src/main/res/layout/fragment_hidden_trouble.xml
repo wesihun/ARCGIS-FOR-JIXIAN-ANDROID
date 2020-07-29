@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_rectification_rate_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="整改率"
+            android:textColor="@color/maincolor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.winto.develop.ThreeTones.wight.ProgressPercentView
+            android:id="@+id/ppv_rectification_rate"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rectification_rate_label" />
+
+        <TextView
+            android:id="@+id/tv_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="98.45%"
+            android:textColor="#FF8A00"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ppv_rectification_rate"
+            app:layout_constraintEnd_toEndOf="@+id/ppv_rectification_rate"
+            app:layout_constraintStart_toStartOf="@+id/ppv_rectification_rate"
+            app:layout_constraintTop_toBottomOf="@+id/ppv_rectification_rate" />
+
+        <TextView
+            android:id="@+id/tv_total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="共发现"
+            app:layout_constraintEnd_toStartOf="@+id/tv_to_rectification_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_percent" />
+
+        <TextView
+            android:id="@+id/tv_total_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="358"
+            android:textColor="@color/maincolor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_total_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_total_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_total_label" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="0dp"
+            android:background="@color/line"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_total_num"
+            app:layout_constraintEnd_toStartOf="@+id/tv_to_rectification_label"
+            app:layout_constraintStart_toEndOf="@+id/tv_total_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_total_label" />
+
+        <TextView
+            android:id="@+id/tv_to_rectification_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="待整改"
+            app:layout_constraintEnd_toStartOf="@+id/tv_to_review_label"
+            app:layout_constraintStart_toEndOf="@+id/tv_total_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_percent" />
+
+        <TextView
+            android:id="@+id/tv_to_rectification_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="358"
+            android:textColor="@color/maincolor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_to_rectification_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_to_rectification_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_to_rectification_label" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="0dp"
+            android:background="@color/line"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_total_num"
+            app:layout_constraintEnd_toStartOf="@+id/tv_to_review_label"
+            app:layout_constraintStart_toEndOf="@+id/tv_to_rectification_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_total_label" />
+
+        <TextView
+            android:id="@+id/tv_to_review_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="待复查"
+            app:layout_constraintEnd_toStartOf="@+id/tv_closed_loop_label"
+            app:layout_constraintStart_toEndOf="@+id/tv_to_rectification_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_percent" />
+
+        <TextView
+            android:id="@+id/tv_to_review_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="358"
+            android:textColor="@color/maincolor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_to_review_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_to_review_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_to_review_label" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="0dp"
+            android:background="@color/line"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_total_num"
+            app:layout_constraintEnd_toStartOf="@+id/tv_closed_loop_label"
+            app:layout_constraintStart_toEndOf="@+id/tv_to_review_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_total_label" />
+
+        <TextView
+            android:id="@+id/tv_closed_loop_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="共发现"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_to_review_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_percent" />
+
+        <TextView
+            android:id="@+id/tv_closed_loop_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="358"
+            android:textColor="@color/maincolor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_closed_loop_label"
+            app:layout_constraintStart_toStartOf="@+id/tv_closed_loop_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_closed_loop_label" />
+
+        <include
+            android:id="@+id/view_line1"
+            layout="@layout/include_base_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_total_num" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="数量统计"
+            android:textColor="@color/maincolor"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_line1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_choose_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_btn_solid_gray"
+            android:padding="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_line1">
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="7dp"
+                android:text="2020年"
+                android:textColor="@color/maintextcolor"
+                app:layout_constraintEnd_toStartOf="@+id/iv_candler"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_candler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/line"
+                android:padding="10dp"
+                android:src="@drawable/ic_candler"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="w,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bc_line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/cl_choose_date" />
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="数量"
+            android:textColor="@color/maincolor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bc_line_chart" />
+
+        <include
+            android:id="@+id/view_line2"
+            layout="@layout/include_base_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tips" />
+
+        <include
+            android:id="@+id/view_table_title"
+            layout="@layout/item_table_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_line2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_table_title"
+            tools:listitem="@layout/item_table_children" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

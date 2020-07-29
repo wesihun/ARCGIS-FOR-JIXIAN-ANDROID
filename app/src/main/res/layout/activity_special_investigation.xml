@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+    <!--<com.esri.arcgisruntime.mapping.view.MapView
+        android:id="@+id/mv_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DBE5F0"
+        android:visibility="gone" />-->
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DBE5F0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp45">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dp10"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_exit_full_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp5"
+            android:src="@drawable/ic_exit_full_screen"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <include
+            android:id="@+id/include_fun"
+            layout="@layout/include_function_layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_marginEnd="@dimen/dp5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <include
+            android:id="@+id/include_table_info"
+            layout="@layout/layout_special_table_info"
+            android:layout_width="@dimen/dp200"
+            android:layout_height="@dimen/dp250"
+            android:layout_marginStart="@dimen/dp7"
+            android:layout_marginTop="@dimen/dp7"
+            android:layout_marginBottom="@dimen/dp7"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/sv_scale"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.winto.develop.ThreeTones.wight.ScaleView
+            android:id="@+id/sv_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp7"
+            android:layout_marginEnd="@dimen/dp7"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv_compass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp210"
+        android:src="@drawable/ic_compass" />
+
+    <RelativeLayout
+        android:id="@+id/rl_expand_land_cate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp35"
+        android:layout_marginTop="@dimen/dp50"
+        app:layout_anchor="@+id/rl_land_cate"
+        app:layout_anchorGravity="bottom">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_bottomsheet_top" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_top"
+            android:background="@color/white" />
+
+        <com.winto.develop.ThreeTones.wight.HorizontalLineView
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp10"
+            app:bendSize="-4dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_land_cate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="@dimen/dp200"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <include
+            android:id="@+id/view_land_cate"
+            layout="@layout/layout_special_investigation_cate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,31 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="15dp">
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_username"
+    <ImageView
+        android:id="@+id/iv_top_image"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_login_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/et_username" />
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_password2"
+    <View
+        android:id="@+id/view_base_line"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/et_password" />
+        android:layout_height="1px"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_top_image"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp40"
+        android:background="@drawable/bg_login_corner"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/view_base_line">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp15"
+            android:text="注册"
+            android:textColor="@color/maintextcolor"
+            android:textSize="@dimen/sp14"
+            android:textStyle="bold" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_register_account"
+                    android:drawablePadding="@dimen/dp15"
+                    android:hint="请输入账号"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingStart="@dimen/dp30"
+                    android:paddingEnd="@dimen/dp30"
+                    android:textColorHint="@color/secondcolor"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_top_image" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:background="@color/maincolor" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_register_passowrd"
+                    android:drawablePadding="@dimen/dp15"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:paddingStart="@dimen/dp30"
+                    android:paddingEnd="@dimen/dp30"
+                    android:textColorHint="@color/secondcolor"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:background="@color/maincolor" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_register_name"
+                    android:drawablePadding="@dimen/dp15"
+                    android:hint="请输入姓名"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/dp30"
+                    android:paddingEnd="@dimen/dp30"
+                    android:textColorHint="@color/secondcolor"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:background="@color/maincolor" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_register_phone"
+                    android:drawablePadding="@dimen/dp15"
+                    android:hint="请输入电话"
+                    android:inputType="phone"
+                    android:paddingStart="@dimen/dp30"
+                    android:paddingEnd="@dimen/dp30"
+                    android:textColorHint="@color/secondcolor"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:background="@color/maincolor" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_sex"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp45"
+                        android:layout_marginEnd="@dimen/dp25"
+                        android:drawableStart="@drawable/ic_register_sex"
+                        android:drawableEnd="@drawable/ic_drop"
+                        android:drawablePadding="@dimen/dp15"
+                        android:paddingTop="@dimen/dp10"
+                        android:paddingBottom="@dimen/dp10"
+                        android:text="性别"
+                        android:textColor="@color/secondcolor"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_department"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_department"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp25"
+                        android:layout_marginEnd="@dimen/dp45"
+                        android:drawableStart="@drawable/ic_register_department"
+                        android:drawableEnd="@drawable/ic_drop"
+                        android:drawablePadding="@dimen/dp15"
+                        android:paddingTop="@dimen/dp10"
+                        android:paddingBottom="@dimen/dp10"
+                        android:text="部门"
+                        android:textColor="@color/secondcolor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_sex"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:background="@color/maincolor" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_job"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp45"
+                        android:layout_marginEnd="@dimen/dp25"
+                        android:drawableStart="@drawable/ic_register_job"
+                        android:drawableEnd="@drawable/ic_drop"
+                        android:drawablePadding="@dimen/dp15"
+                        android:paddingTop="@dimen/dp10"
+                        android:paddingBottom="@dimen/dp10"
+                        android:text="岗位"
+                        android:textColor="@color/secondcolor"
+                        app:layout_constraintEnd_toStartOf="@id/tv_role"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_role"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp25"
+                        android:layout_marginEnd="@dimen/dp45"
+                        android:drawableStart="@drawable/ic_register_role"
+                        android:drawableEnd="@drawable/ic_drop"
+                        android:drawablePadding="@dimen/dp15"
+                        android:paddingTop="@dimen/dp10"
+                        android:paddingBottom="@dimen/dp10"
+                        android:text="角色"
+                        android:textColor="@color/secondcolor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_job"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/et_password2"
-        android:text="register" />
-</RelativeLayout>
+        android:layout_height="@dimen/dp45"
+        android:layout_marginStart="@dimen/dp25"
+        android:layout_marginTop="@dimen/dp30"
+        android:layout_marginEnd="@dimen/dp25"
+        android:layout_marginBottom="@dimen/dp20"
+        android:background="@drawable/bg_btn_clickable_corner_blue"
+        android:text="立即注册"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

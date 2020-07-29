@@ -1,0 +1,99 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp30"
+    android:layout_marginEnd="@dimen/dp30"
+    android:background="@drawable/bg_white_corner_3dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="下载申请"
+        android:textColor="@color/maintextcolor"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_personal_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp15"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:text="申请人："
+        android:textColor="@color/maintextcolor"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_personal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tom"
+        android:textColor="@color/maintextcolor"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_personal_label"
+        app:layout_constraintStart_toEndOf="@+id/tv_personal_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_personal_label" />
+
+    <EditText
+        android:id="@+id/et_opinion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp20"
+        android:background="@drawable/bg_btn_solid_gray"
+        android:gravity="start"
+        android:hint="请填写申请用途"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="@dimen/dp80"
+        android:padding="@dimen/dp10"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_personal" />
+
+    <TextView
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp10"
+        android:paddingStart="@dimen/dp10"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp10"
+        android:paddingBottom="@dimen/dp5"
+        android:text="取消"
+        android:textColor="@color/secondtextcolor"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp20"
+        android:paddingStart="@dimen/dp10"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp10"
+        android:paddingBottom="@dimen/dp5"
+        android:text="确定"
+        android:textColor="@color/maincolor"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_opinion" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
